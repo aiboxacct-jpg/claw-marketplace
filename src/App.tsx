@@ -54,22 +54,26 @@ function App() {
   })
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
+    <div className="min-h-screen bg-bg-dark text-text-primary font-mono">
       {/* Navigation */}
-      <nav className="border-b border-gray-800 bg-black/50 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16 items-center">
-            <div className="flex items-center">
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-                🤖 ClawMarketPlace
-              </h1>
-            </div>
-            <div className="flex space-x-4">
-              <a href="#" className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-800">
-                Browse
+      <nav className="border-b-[3px] border-border-color bg-bg-card">
+        <div className="max-w-7xl mx-auto px-6 py-4">
+          <div className="flex justify-between items-center">
+            <h1 className="font-pixel text-xl md:text-2xl">
+              <span className="text-hot-pink" style={{textShadow: '2px 2px 0 var(--cyan)'}}>CLAW</span>
+              <span className="text-cyan" style={{textShadow: '2px 2px 0 var(--hot-pink)'}}>MARKETPLACE</span>
+            </h1>
+            <div className="flex gap-4">
+              <a href="#" className="px-4 py-2 text-sm font-bold hover:text-hot-pink transition-colors">
+                BROWSE
               </a>
-              <a href="https://github.com/aiboxacct-jpg/claw-marketplace/blob/main/SUBMIT.md" target="_blank" rel="noopener noreferrer" className="px-3 py-2 rounded-md text-sm font-medium bg-blue-600 hover:bg-blue-700">
-                Submit Agent
+              <a 
+                href="https://github.com/aiboxacct-jpg/claw-marketplace/blob/main/SUBMIT.md" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="px-4 py-2 text-sm font-bold bg-hot-pink text-bg-dark hover:bg-cyan hover:text-bg-dark transition-all"
+              >
+                SUBMIT AGENT
               </a>
             </div>
           </div>
@@ -77,13 +81,13 @@ function App() {
       </nav>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <main className="max-w-7xl mx-auto px-6 py-12">
         {/* Hero */}
         <div className="text-center mb-12">
-          <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-            Discover AI Agents
+          <h2 className="font-pixel text-3xl md:text-4xl mb-6 text-text-primary">
+            DISCOVER AI AGENTS
           </h2>
-          <p className="text-xl text-gray-400 mb-8">
+          <p className="text-lg text-text-secondary mb-8 max-w-2xl mx-auto">
             Free directory of AI agents for every task
           </p>
 
@@ -91,26 +95,26 @@ function App() {
           <div className="max-w-2xl mx-auto mb-6">
             <input
               type="text"
-              placeholder="Search agents..."
+              placeholder="SEARCH AGENTS..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full px-6 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:border-blue-500 focus:outline-none text-white placeholder-gray-400"
+              className="w-full px-6 py-4 bg-bg-card border-[3px] border-border-color focus:border-cyan focus:outline-none text-text-primary font-mono placeholder-text-muted"
             />
           </div>
 
           {/* Category Filters */}
-          <div className="flex flex-wrap justify-center gap-2">
+          <div className="flex flex-wrap justify-center gap-3">
             {categories.map(cat => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition ${
+                className={`px-4 py-2 text-sm font-bold uppercase border-[3px] transition-all ${
                   selectedCategory === cat
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                    ? 'bg-hot-pink text-bg-dark border-hot-pink'
+                    : 'bg-transparent text-text-primary border-border-color hover:border-cyan hover:text-cyan'
                 }`}
               >
-                {cat.charAt(0).toUpperCase() + cat.slice(1)}
+                {cat}
               </button>
             ))}
           </div>
@@ -118,50 +122,53 @@ function App() {
 
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-          <div className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 border border-gray-700">
-            <div className="text-3xl font-bold text-blue-400 mb-2">{agents.length}</div>
-            <div className="text-gray-400">Total Agents</div>
+          <div className="bg-bg-card border-[3px] border-border-color p-6">
+            <div className="text-4xl font-bold text-lime mb-2">{agents.length}</div>
+            <div className="text-text-secondary uppercase text-sm font-bold">Total Agents</div>
           </div>
-          <div className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 border border-gray-700">
-            <div className="text-3xl font-bold text-purple-400 mb-2">{categories.length - 1}</div>
-            <div className="text-gray-400">Categories</div>
+          <div className="bg-bg-card border-[3px] border-border-color p-6">
+            <div className="text-4xl font-bold text-cyan mb-2">{categories.length - 1}</div>
+            <div className="text-text-secondary uppercase text-sm font-bold">Categories</div>
           </div>
-          <div className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 border border-gray-700">
-            <div className="text-3xl font-bold text-green-400 mb-2">100%</div>
-            <div className="text-gray-400">Free</div>
+          <div className="bg-bg-card border-[3px] border-border-color p-6">
+            <div className="text-4xl font-bold text-hot-pink mb-2">100%</div>
+            <div className="text-text-secondary uppercase text-sm font-bold">Free</div>
           </div>
         </div>
 
         {/* Agent Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredAgents.length === 0 ? (
-            <div className="col-span-full text-center py-12 text-gray-400">
-              <p className="text-xl mb-4">No agents found matching your search.</p>
+            <div className="col-span-full text-center py-12">
+              <p className="text-xl text-text-secondary font-pixel text-sm mb-4">NO AGENTS FOUND</p>
+              <p className="text-text-muted">Try adjusting your search or filters</p>
             </div>
           ) : (
             filteredAgents.map(agent => (
               <div
                 key={agent.id}
-                className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 border border-gray-700 hover:border-blue-500 transition group cursor-pointer"
+                className="bg-bg-card border-[3px] border-border-color hover:border-hot-pink transition-all cursor-pointer group"
               >
-                <div className="flex items-start justify-between mb-3">
-                  <h3 className="text-xl font-bold group-hover:text-blue-400 transition">
-                    {agent.name}
-                  </h3>
-                  <span className="px-2 py-1 text-xs rounded-full bg-blue-600/20 text-blue-400 border border-blue-600/30">
-                    {agent.category}
-                  </span>
-                </div>
-                <p className="text-gray-400 mb-4 line-clamp-3">{agent.description}</p>
-                <div className="flex flex-wrap gap-2 mb-3">
-                  {agent.capabilities.slice(0, 3).map((cap, idx) => (
-                    <span key={idx} className="px-2 py-1 text-xs rounded bg-gray-700 text-gray-300">
-                      {cap}
+                <div className="p-6">
+                  <div className="flex items-start justify-between mb-4">
+                    <h3 className="font-pixel text-sm text-text-primary group-hover:text-hot-pink transition-colors">
+                      {agent.name}
+                    </h3>
+                    <span className="px-2 py-1 text-[8px] font-pixel uppercase bg-cyan text-bg-dark">
+                      {agent.category}
                     </span>
-                  ))}
-                </div>
-                <div className="text-sm text-gray-500">
-                  by {agent.creator}
+                  </div>
+                  <p className="text-text-secondary mb-4 text-sm line-clamp-3">{agent.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {agent.capabilities.slice(0, 3).map((cap, idx) => (
+                      <span key={idx} className="px-2 py-1 text-xs bg-bg-dark text-lime border border-border-color">
+                        {cap}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="text-xs text-text-muted uppercase font-bold">
+                    by {agent.creator}
+                  </div>
                 </div>
               </div>
             ))
@@ -170,16 +177,17 @@ function App() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-gray-800 mt-20">
-        <div className="max-w-7xl mx-auto px-4 py-8 text-center text-gray-400">
-          <p className="mb-2">© 2026 ClawMarketPlace - Free AI Agent Directory</p>
-          <p className="text-sm">
-            <a href="https://github.com/aiboxacct-jpg/claw-marketplace/blob/main/SUBMIT.md" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
-              Submit Your Agent
+      <footer className="border-t-[3px] border-border-color mt-20">
+        <div className="max-w-7xl mx-auto px-6 py-8 text-center">
+          <p className="mb-2 font-pixel text-[10px] text-hot-pink">CLAWMARKETPLACE</p>
+          <p className="text-xs text-text-muted mb-3">© 2026 Free AI Agent Directory</p>
+          <p className="text-xs text-text-secondary">
+            <a href="https://github.com/aiboxacct-jpg/claw-marketplace/blob/main/SUBMIT.md" target="_blank" rel="noopener noreferrer" className="text-cyan hover:text-hot-pink transition-colors font-bold">
+              SUBMIT YOUR AGENT
             </a>
             {' · '}
-            <a href="https://github.com/aiboxacct-jpg/claw-marketplace" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
-              GitHub
+            <a href="https://github.com/aiboxacct-jpg/claw-marketplace" target="_blank" rel="noopener noreferrer" className="text-cyan hover:text-hot-pink transition-colors font-bold">
+              GITHUB
             </a>
           </p>
         </div>
