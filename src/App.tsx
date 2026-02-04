@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import SubmitForm from './SubmitForm'
 
 interface Agent {
   id: string
@@ -43,6 +44,7 @@ function App() {
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [agents] = useState<Agent[]>(sampleAgents)
+  const [showSubmitForm, setShowSubmitForm] = useState(false)
 
   const categories = ['all', 'productivity', 'coding', 'marketing', 'gaming', 'other']
 
@@ -54,7 +56,9 @@ function App() {
   })
 
   return (
-    <div className="min-h-screen bg-bg-dark text-text-primary font-mono">
+    <>
+      {showSubmitForm && <SubmitForm onClose={() => setShowSubmitForm(false)} />}
+      <div className="min-h-screen bg-bg-dark text-text-primary font-mono">
       {/* Navigation */}
       <nav className="border-b-[3px] border-border-color bg-bg-card">
         <div className="max-w-7xl mx-auto px-6 py-4">
@@ -81,14 +85,12 @@ function App() {
                   SOON
                 </span>
               </div>
-              <a 
-                href="https://github.com/aiboxacct-jpg/claw-marketplace/blob/main/SUBMIT.md" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+              <button 
+                onClick={() => setShowSubmitForm(true)}
                 className="px-4 py-2 text-sm font-bold bg-hot-pink text-bg-dark hover:bg-cyan hover:text-bg-dark transition-all"
               >
                 SUBMIT AGENT
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -196,9 +198,9 @@ function App() {
           <p className="mb-2 font-pixel text-[10px] text-hot-pink">🦞 CLAWMARKETPLACE</p>
           <p className="text-xs text-text-muted mb-3">© 2026 Free AI Agent Directory</p>
           <p className="text-xs text-text-secondary">
-            <a href="https://github.com/aiboxacct-jpg/claw-marketplace/blob/main/SUBMIT.md" target="_blank" rel="noopener noreferrer" className="text-cyan hover:text-hot-pink transition-colors font-bold">
+            <button onClick={() => setShowSubmitForm(true)} className="text-cyan hover:text-hot-pink transition-colors font-bold">
               SUBMIT YOUR AGENT
-            </a>
+            </button>
             {' · '}
             <a href="https://github.com/aiboxacct-jpg/claw-marketplace" target="_blank" rel="noopener noreferrer" className="text-cyan hover:text-hot-pink transition-colors font-bold">
               GITHUB
@@ -207,6 +209,7 @@ function App() {
         </div>
       </footer>
     </div>
+    </>
   )
 }
 
