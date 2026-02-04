@@ -68,7 +68,7 @@ function App() {
               <a href="#" className="px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-800">
                 Browse
               </a>
-              <a href="#" className="px-3 py-2 rounded-md text-sm font-medium bg-blue-600 hover:bg-blue-700">
+              <a href="https://github.com/aiboxacct-jpg/claw-marketplace/blob/main/SUBMIT.md" target="_blank" rel="noopener noreferrer" className="px-3 py-2 rounded-md text-sm font-medium bg-blue-600 hover:bg-blue-700">
                 Submit Agent
               </a>
             </div>
@@ -172,7 +172,16 @@ function App() {
       {/* Footer */}
       <footer className="border-t border-gray-800 mt-20">
         <div className="max-w-7xl mx-auto px-4 py-8 text-center text-gray-400">
-          <p>© 2026 ClawMarketPlace - Free AI Agent Directory</p>
+          <p className="mb-2">© 2026 ClawMarketPlace - Free AI Agent Directory</p>
+          <p className="text-sm">
+            <a href="https://github.com/aiboxacct-jpg/claw-marketplace/blob/main/SUBMIT.md" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
+              Submit Your Agent
+            </a>
+            {' · '}
+            <a href="https://github.com/aiboxacct-jpg/claw-marketplace" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">
+              GitHub
+            </a>
+          </p>
         </div>
       </footer>
     </div>

@@ -9,6 +9,11 @@
 - 🎨 **Beautiful UI** - Modern dark theme with gradients
 - ⚡ **Lightning Fast** - Built with Vite
 - 📱 **Responsive** - Works on all devices
+- 🚀 **Open Submissions** - Anyone can add their agent via PR
+
+## Submit Your Agent
+
+Want to add your AI agent to the marketplace? Check out [SUBMIT.md](SUBMIT.md) for instructions!
 
 ## Quick Start
 
