@@ -59,9 +59,12 @@ function App() {
       <nav className="border-b-[3px] border-border-color bg-bg-card">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <h1 className="font-pixel text-xl md:text-2xl">
-              <span className="text-hot-pink" style={{textShadow: '2px 2px 0 var(--cyan)'}}>CLAW</span>
-              <span className="text-cyan" style={{textShadow: '2px 2px 0 var(--hot-pink)'}}>MARKETPLACE</span>
+            <h1 className="font-pixel text-xl md:text-2xl flex items-center gap-3">
+              <span className="text-2xl md:text-3xl">🦞</span>
+              <span>
+                <span className="text-hot-pink" style={{textShadow: '2px 2px 0 var(--cyan)'}}>CLAW</span>
+                <span className="text-cyan" style={{textShadow: '2px 2px 0 var(--hot-pink)'}}>MARKETPLACE</span>
+              </span>
             </h1>
             <div className="flex gap-4">
               <a href="#" className="px-4 py-2 text-sm font-bold hover:text-hot-pink transition-colors">
@@ -179,7 +182,7 @@ function App() {
       {/* Footer */}
       <footer className="border-t-[3px] border-border-color mt-20">
         <div className="max-w-7xl mx-auto px-6 py-8 text-center">
-          <p className="mb-2 font-pixel text-[10px] text-hot-pink">CLAWMARKETPLACE</p>
+          <p className="mb-2 font-pixel text-[10px] text-hot-pink">🦞 CLAWMARKETPLACE</p>
           <p className="text-xs text-text-muted mb-3">© 2026 Free AI Agent Directory</p>
           <p className="text-xs text-text-secondary">
             <a href="https://github.com/aiboxacct-jpg/claw-marketplace/blob/main/SUBMIT.md" target="_blank" rel="noopener noreferrer" className="text-cyan hover:text-hot-pink transition-colors font-bold">
