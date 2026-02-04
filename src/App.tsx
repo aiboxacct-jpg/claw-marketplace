@@ -66,10 +66,21 @@ function App() {
                 <span className="text-cyan" style={{textShadow: '2px 2px 0 var(--hot-pink)'}}>MARKETPLACE</span>
               </span>
             </h1>
-            <div className="flex gap-4">
+            <div className="flex gap-3 items-center">
               <a href="#" className="px-4 py-2 text-sm font-bold hover:text-hot-pink transition-colors">
                 BROWSE
               </a>
+              <div className="relative">
+                <button 
+                  disabled
+                  className="px-4 py-2 text-sm font-bold bg-bg-dark text-text-muted border-[3px] border-border-color cursor-not-allowed opacity-60"
+                >
+                  BUY/SELL/RENT
+                </button>
+                <span className="absolute -top-2 -right-2 px-2 py-0.5 text-[8px] font-pixel bg-text-muted text-bg-dark">
+                  SOON
+                </span>
+              </div>
               <a 
                 href="https://github.com/aiboxacct-jpg/claw-marketplace/blob/main/SUBMIT.md" 
                 target="_blank" 
