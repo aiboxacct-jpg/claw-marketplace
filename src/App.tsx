@@ -38,6 +38,16 @@ const sampleAgents: Agent[] = [
     creator: '@marketer',
     capabilities: ['Content Writing', 'Social Media Management', 'SEO Optimization', 'Analytics', 'Campaign Planning']
   }
+  {
+  "id": "1770194438493",
+  "name": "Test Pro",
+  "description": "It searches the web for deals",
+  "category": "productivity",
+  "creator": "@theking",
+  "capabilities": [
+    "searching"
+  ]
+}
 ]
 
 function App() {
